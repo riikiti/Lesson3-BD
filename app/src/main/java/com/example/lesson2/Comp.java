@@ -1,12 +1,23 @@
 package com.example.lesson2;
 
-public class Comp {
-    private int mouse, pubg,headphones;
+import java.io.Serializable;
 
-    public Comp(int mouse, int pubg, int headphones) {
+public class Comp implements Serializable {
+    private int mouse, pubg,headphones, multiplay;
+
+
+    public Comp(int mouse, int pubg, int headphones, int multiplay) {
         this.mouse = mouse;
         this.pubg = pubg;
         this.headphones = headphones;
+        this.multiplay = multiplay;
+    }
+    public int getMultiplay() {
+        return multiplay;
+    }
+
+    public void setMultiplay(int multiplay) {
+        this.multiplay = multiplay;
     }
 
     public int getMouse() {
