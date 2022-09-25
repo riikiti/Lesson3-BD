@@ -10,22 +10,26 @@ import android.widget.RadioButton;
 import android.database.sqlite.SQLiteDatabase;
 
 public class Comp implements Serializable {
-    private String mouse, pubg, headphones,name;
+    private String mouse, pubg, headphones, name;
     private int multiply, pMouse, pHeadphones, pPubg;
 
 
     public Comp() {
-        this.mouse = mouse;
-        this.pubg = pubg;
-        this.headphones = headphones;
+        this.mouse = "none";
+        this.pubg = "none";
+        this.headphones = "none";
         this.multiply = 0;
         this.pMouse = 0;
         this.pHeadphones = 0;
         this.pPubg = 0;
     }
 
-    public void InsertToBD(SQLiteDatabase db, String s) {
-        db.execSQL("INSERT OR IGNORE INTO lots VALUES (s , this.multiply)");
+    public void InsertToBD(SQLiteDatabase db, String s, int sum, String name) {
+        try {
+            db.execSQL("INSERT OR IGNORE INTO lots VALUES ('s',12,'name')");
+        } catch (Exception err) {
+        }
+
     }
 
     //getPrice

@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Res(View view) {
-        SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS lots (lot TEXT, price INTEGER)");
+
         Comp f1 = new Comp();
         int multiply = 5;
         try {
