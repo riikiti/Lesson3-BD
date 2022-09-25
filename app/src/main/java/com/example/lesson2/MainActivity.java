@@ -22,55 +22,53 @@ public class MainActivity extends AppCompatActivity {
     public void Res(View view) {
         SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS lots (lot TEXT, price INTEGER)");
-        Comp f1 = new Comp(0, 0, 0, 0);
+        Comp f1 = new Comp();
+        int multiply = 5;
         try {
+            //checbox
             CheckBox rf = findViewById(R.id.checkBoxP1);
             if (rf.isChecked()) {
-                f1.setMultiply(5);
+                f1.setMultiply(multiply);
             }
-
+            //mouse
             RadioButton rf1 = findViewById(R.id.radioButtonM1);
-            if (rf1.isChecked()) f1.setMouse(1);
+            if (rf1.isChecked()) f1.setMouse("logitech", 1000);
+
             rf1 = findViewById(R.id.radioButtonM2);
+            if (rf1.isChecked()) f1.setMouse("Razer", 2500);
 
-            if (rf1.isChecked()) f1.setMouse(2);
             rf1 = findViewById(R.id.radioButtonM3);
+            if (rf1.isChecked()) f1.setMouse("Sven", 5);
 
-            if (rf1.isChecked()) {
-                f1.setMouse(3);
-            }
+            //headphones
             rf1 = findViewById(R.id.radioButtonH1);
+            if (rf1.isChecked()) f1.setHeadphones("Hyper ekes bookes ekes",1);
 
-            if (rf1.isChecked()) {
-                f1.setHeadphones(1);
-            }
             rf1 = findViewById(R.id.radioButtonH2);
-            if (rf1.isChecked()) {
-                f1.setHeadphones(2);
-            }
+            if (rf1.isChecked()) f1.setHeadphones("Senhesiser",2);
+
             rf1 = findViewById(R.id.radioButtonH3);
             if (rf1.isChecked()) {
-                f1.setHeadphones(3);
+                f1.setHeadphones("Phileps",3);
             }
             rf1 = findViewById(R.id.radioButtonH4);
             if (rf1.isChecked()) {
-                f1.setHeadphones(4);
+                f1.setHeadphones("Marshall",4);
             }
+            //Pubg
 
             rf1 = findViewById(R.id.radioButton1);
             if (rf1.isChecked()) {
-                f1.setPubg(1);
+                f1.setPubg("Fortinayte",30);
             }
             rf1 = findViewById(R.id.radioButton2);
             if (rf1.isChecked()) {
-                f1.setPubg(2);
+                f1.setPubg("pubdje",25);
             }
 
             Intent intent = new Intent(this, Result.class);
             intent.putExtra(Comp.class.getSimpleName(), f1);
             startActivity(intent);
-
-
 
 
         } catch (Exception err) {

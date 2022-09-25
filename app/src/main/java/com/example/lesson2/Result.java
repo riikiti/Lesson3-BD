@@ -27,47 +27,58 @@ public class Result extends AppCompatActivity {
         SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS lots (lot TEXT, price INTEGER)");
         String s = " VI kypit  : \n";
+        int sum = 0;
         switch (comp1.getMouse()) {
-            case 1:
+            case "logitech":
                 s += "logitech mouse\n";
+                sum += comp1.getpMouse();
             break;
-            case 2: s += "Razer mouse\n";
+            case "Razer": s += "Razer mouse\n";
+                sum += comp1.getpMouse();
             break;
-            case 3: s += "Sven mouse\n";
+            case "Sven": s += "Sven mouse\n";
+                sum += comp1.getpMouse();
             break;
         }
         switch (comp1.getHeadphones()) {
-            case 1:
+            case "Hyper ekes bookes ekes":
                 s += "Hyper ekes bookes ekes headphones\n";
+                sum+= comp1.getpHeadphones();
                 break;
-            case 2:
+            case "Senhesiser":
                 s += "Senhesiser headphones\n";
+                sum+= comp1.getpHeadphones();
                 break;
-            case 3:
+            case "Phileps":
                 s += "Phileps headphones\n";
+                sum+= comp1.getpHeadphones();
                 break;
-            case 4:
+            case "Marshall":
                 s += "Marshall headphones\n";
+                sum+= comp1.getpHeadphones();
                 break;
         }
 
         switch (comp1.getPubg()) {
-            case 1:
+            case "Fortinayte":
                 s += "and fotinaite\n";
+                sum+= comp1.getpPubg();
                 break;
-            case 2:
+            case "pubdje":
                 s += "and pubg \n";
+                sum+= comp1.getpPubg();
                 break;
         }
 
         if (comp1.getMultiply()==5){
             s += "its for free my friends \n";
+            sum *= comp1.getMultiply();
         }
         TextView t = findViewById(R.id.res1);
         t.setText(s);
         TextView t1 = findViewById(R.id.res2);
-        t1.setText(String.valueOf(comp1.getMouse()));
-        comp1.InsertToBD(db,s);
+        t1.setText(String.valueOf(sum));
+       // comp1.InsertToBD(db,s);
     }
 
     public void AllResults(View view) {
