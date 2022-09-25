@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.content.Intent;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         Comp f1 = new Comp();
         int multiply = 5;
         try {
+            EditText name = (EditText) findViewById(R.id.name);
+            f1.setName(name.getText().toString());
+
             //checbox
             CheckBox rf = findViewById(R.id.checkBoxP1);
             if (rf.isChecked()) {

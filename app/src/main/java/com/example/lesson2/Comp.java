@@ -10,7 +10,7 @@ import android.widget.RadioButton;
 import android.database.sqlite.SQLiteDatabase;
 
 public class Comp implements Serializable {
-    private String mouse, pubg, headphones;
+    private String mouse, pubg, headphones,name;
     private int multiply, pMouse, pHeadphones, pPubg;
 
 
@@ -43,6 +43,10 @@ public class Comp implements Serializable {
 
     //Get
 
+    public String getName() {
+        return name;
+    }
+
     public String getMouse() {
         return mouse;
     }
@@ -61,6 +65,11 @@ public class Comp implements Serializable {
 
 
     //Set
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setMouse(String mouse, int pMouse) {
         this.mouse = mouse;
         this.pMouse = pMouse;

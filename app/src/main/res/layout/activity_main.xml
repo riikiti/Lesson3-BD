@@ -155,12 +155,34 @@
 
             </RadioGroup>
 
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="43dp"
+                android:layout_marginEnd="239dp"
+                android:layout_marginBottom="23dp"
+                android:text="Enter your name"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="My Name" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button"
-                android:onClick="Res"/>
+                android:onClick="Res"
+                android:text="Button" />
 
         </LinearLayout>
     </ScrollView>

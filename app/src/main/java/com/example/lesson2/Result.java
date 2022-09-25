@@ -78,6 +78,8 @@ public class Result extends AppCompatActivity {
         t.setText(s);
         TextView t1 = findViewById(R.id.res2);
         t1.setText(String.valueOf(sum));
+        TextView t2 = findViewById(R.id.res);
+        t2.setText(comp1.getName());
        // comp1.InsertToBD(db,s);
     }
 
