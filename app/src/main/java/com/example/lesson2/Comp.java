@@ -2,22 +2,34 @@ package com.example.lesson2;
 
 import java.io.Serializable;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.CheckBox;
+import android.content.Intent;
+import android.widget.RadioButton;
+import android.database.sqlite.SQLiteDatabase;
+
 public class Comp implements Serializable {
-    private int mouse, pubg,headphones, multiplay;
+    private int mouse, pubg, headphones, multiply;
 
 
-    public Comp(int mouse, int pubg, int headphones, int multiplay) {
+    public Comp(int mouse, int pubg, int headphones, int multiply) {
         this.mouse = mouse;
         this.pubg = pubg;
         this.headphones = headphones;
-        this.multiplay = multiplay;
-    }
-    public int getMultiplay() {
-        return multiplay;
+        this.multiply = multiply;
     }
 
-    public void setMultiplay(int multiplay) {
-        this.multiplay = multiplay;
+    public void InsertToBD(SQLiteDatabase db, String s) {
+        db.execSQL("INSERT OR IGNORE INTO lots VALUES (s , this.multiply)");
+    }
+
+    public int getMultiply() {
+        return multiply;
+    }
+
+    public void setMultiply(int multiply) {
+        this.multiply = multiply;
     }
 
     public int getMouse() {

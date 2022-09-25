@@ -41,4 +41,13 @@
         android:textSize="24sp"
         tools:layout_editor_absoluteX="13dp"
         tools:layout_editor_absoluteY="12dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:onClick="AllResults"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="232dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

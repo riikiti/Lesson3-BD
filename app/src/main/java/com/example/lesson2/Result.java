@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.database.sqlite.SQLiteDatabase;
 
 public class Result extends AppCompatActivity {
 
@@ -19,9 +20,12 @@ public class Result extends AppCompatActivity {
             comp1 = (Comp) arguments.getSerializable(Comp.class.getSimpleName());
             printRes(comp1);
         }
+
     }
 
     private void printRes(Comp comp1) {
+        SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS lots (lot TEXT, price INTEGER)");
         String s = " VI kypit  : \n";
         switch (comp1.getMouse()) {
             case 1:
@@ -56,13 +60,17 @@ public class Result extends AppCompatActivity {
                 break;
         }
 
-        if (comp1.getMultiplay()==5){
+        if (comp1.getMultiply()==5){
             s += "its for free my friends \n";
         }
         TextView t = findViewById(R.id.res1);
         t.setText(s);
         TextView t1 = findViewById(R.id.res2);
         t1.setText(String.valueOf(comp1.getMouse()));
+        comp1.InsertToBD(db,s);
     }
 
+    public void AllResults(View view) {
+        SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
+    }
 }
