@@ -14,17 +14,16 @@ public class DBResults extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dbresults);
 
-
-
         SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
-        Cursor query = db.rawQuery("SELECT * FROM lots;", null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS lots2 (lots TEXT, name TEXT, lotPrice INTEGER );");
+        Cursor query = db.rawQuery("SELECT * FROM lots2;", null);
         TextView textView = findViewById(R.id.textView6);
         textView.setText("");
         while(query.moveToNext()){
             String lots = query.getString(0);
-            int price = query.getInt(1);
-            String name = query.getString(2);
-            textView.append("Lots: " + lots + " Price: " + price + " Name: " + name + "\n");
+            String name = query.getString(1);
+            int price = query.getInt(2);
+            textView.append("Lots: " + lots + "Name: " + name + " Price: " + price + "\n");
         }
         query.close();
         db.close();

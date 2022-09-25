@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.content.Intent;
 import android.widget.RadioButton;
-import android.database.sqlite.SQLiteDatabase;
+
 
 public class Comp implements Serializable {
     private String mouse, pubg, headphones, name;
@@ -24,13 +24,6 @@ public class Comp implements Serializable {
         this.pPubg = 0;
     }
 
-    public void InsertToBD(SQLiteDatabase db, String s, int sum, String name) {
-        try {
-            db.execSQL("INSERT OR IGNORE INTO lots VALUES ('s',12,'name')");
-        } catch (Exception err) {
-        }
-
-    }
 
     //getPrice
     public int getpMouse() {

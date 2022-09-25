@@ -27,8 +27,7 @@ public class Result extends AppCompatActivity {
     }
 
     private void printRes(Comp comp1) {
-        SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS lots (lots TEXT, lotPrice INTEGER,name TEXT)");
+
         String s = " VI kypit  : \n";
         int sum = 0;
         switch (comp1.getMouse()) {
@@ -89,7 +88,11 @@ public class Result extends AppCompatActivity {
             sum *= comp1.getMultiply();
         }
 
-        comp1.InsertToBD(db, s, sum, comp1.getName());
+        SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS lots2 (lots TEXT, name TEXT, lotPrice INTEGER );");
+        db.execSQL("INSERT OR IGNORE INTO lots2 VALUES ('" + s + "','" + comp1.getName() + "','"+ sum +"') ");
+
+
         TextView t = findViewById(R.id.res1);
         t.setText(s);
         TextView t1 = findViewById(R.id.res2);
