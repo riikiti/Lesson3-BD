@@ -26,27 +26,34 @@ public class Result extends AppCompatActivity {
         switch (comp1.getMouse()) {
             case 1:
                 s += "logitech mouse\n";
-            case 2:
-                s += "Razer mouse\n";
-            case 3:
-                s += "Sven mouse\n";
+            break;
+            case 2: s += "Razer mouse\n";
+            break;
+            case 3: s += "Sven mouse\n";
+            break;
         }
         switch (comp1.getHeadphones()) {
             case 1:
                 s += "Hyper ekes bookes ekes headphones\n";
+                break;
             case 2:
                 s += "Senhesiser headphones\n";
+                break;
             case 3:
                 s += "Phileps headphones\n";
+                break;
             case 4:
                 s += "Marshall headphones\n";
+                break;
         }
 
         switch (comp1.getPubg()) {
             case 1:
                 s += "and fotinaite\n";
+                break;
             case 2:
                 s += "and pubg \n";
+                break;
         }
 
         if (comp1.getMultiplay()==5){
@@ -55,7 +62,7 @@ public class Result extends AppCompatActivity {
         TextView t = findViewById(R.id.res1);
         t.setText(s);
         TextView t1 = findViewById(R.id.res2);
-        t1.setText("Molodec");
+        t1.setText(String.valueOf(comp1.getMouse()));
     }
 
 }

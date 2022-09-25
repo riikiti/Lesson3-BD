@@ -25,15 +25,15 @@ public class MainActivity extends AppCompatActivity {
             if (rf.isChecked()) {f1.setMultiplay(5);}
 
             RadioButton rf1 = findViewById(R.id.radioButtonM1);
-            if (rf1.isChecked())
-            {f1.setMouse(1);
-            }
+            if (rf1.isChecked()) f1.setMouse(1);
             rf1 = findViewById(R.id.radioButtonM2);
-            if (rf1.isChecked()){f1.setMouse(2);}
-            rf1 = findViewById(R.id.radioButtonM3);
-            if (rf1.isChecked()){f1.setMouse(3);}
 
+            if (rf1.isChecked()) f1.setMouse(2);
+            rf1 = findViewById(R.id.radioButtonM3);
+
+            if (rf1.isChecked()){f1.setMouse(3);}
             rf1 = findViewById(R.id.radioButtonH1);
+
             if (rf1.isChecked()){f1.setHeadphones(1);}
             rf1 = findViewById(R.id.radioButtonH2);
             if (rf1.isChecked()){f1.setHeadphones(2);}
