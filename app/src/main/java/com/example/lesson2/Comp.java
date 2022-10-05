@@ -10,32 +10,32 @@ import android.widget.RadioButton;
 
 
 public class Comp implements Serializable {
-    private String mouse, pubg, headphones, name;
-    private int multiply, pMouse, pHeadphones, pPubg;
+    private String oc, anti, clear, name;
+    private int multiply, pOc, pAnti, pClear;
 
 
     public Comp() {
-        this.mouse = "none";
-        this.pubg = "none";
-        this.headphones = "none";
+        this.oc = "none";
+        this.anti = "none";
+        this.clear = "none";
         this.multiply = 0;
-        this.pMouse = 0;
-        this.pHeadphones = 0;
-        this.pPubg = 0;
+        this.pOc = 0;
+        this.pAnti = 0;
+        this.pClear = 0;
     }
 
 
     //getPrice
-    public int getpMouse() {
-        return pMouse;
+    public int getpOc() {
+        return pOc;
     }
 
-    public int getpHeadphones() {
-        return pHeadphones;
+    public int getpAnti() {
+        return pAnti;
     }
 
-    public int getpPubg() {
-        return pPubg;
+    public int getpClear() {
+        return pClear;
     }
 
     //Get
@@ -44,16 +44,16 @@ public class Comp implements Serializable {
         return name;
     }
 
-    public String getMouse() {
-        return mouse;
+    public String getOc() {
+        return oc;
     }
 
-    public String getPubg() {
-        return pubg;
+    public String getAnti() {
+        return anti;
     }
 
-    public String getHeadphones() {
-        return headphones;
+    public String getClear() {
+        return clear;
     }
 
     public int getMultiply() {
@@ -67,19 +67,19 @@ public class Comp implements Serializable {
         this.name = name;
     }
 
-    public void setMouse(String mouse, int pMouse) {
-        this.mouse = mouse;
-        this.pMouse = pMouse;
+    public void setOc(String oc, int pOc) {
+        this.oc = oc;
+        this.pOc = pOc;
     }
 
-    public void setPubg(String pubg, int pPubg) {
-        this.pubg = pubg;
-        this.pPubg = pPubg;
+    public void setAnti(String anti, int pClear) {
+        this.anti = anti;
+        this.pClear = pClear;
     }
 
-    public void setHeadphones(String headphones, int pHeadphones) {
-        this.headphones = headphones;
-        this.pHeadphones = pHeadphones;
+    public void setClear(String clear, int pAnti) {
+        this.clear = clear;
+        this.pAnti = pAnti;
     }
 
     public void setMultiply(int multiply) {

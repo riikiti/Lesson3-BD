@@ -30,67 +30,67 @@ public class Result extends AppCompatActivity {
 
         String s = " VI kypit  : \n";
         int sum = 0;
-        switch (comp1.getMouse()) {
-            case "logitech":
-                s += "logitech mouse\n";
-                sum += comp1.getpMouse();
+        switch (comp1.getOc()) {
+            case "Linux":
+                s += "Linux\n";
+                sum += comp1.getpOc();
                 break;
-            case "Razer":
-                s += "Razer mouse\n";
-                sum += comp1.getpMouse();
+            case "Убунту":
+                s += "Убунту\n";
+                sum += comp1.getpOc();
                 break;
-            case "Sven":
-                s += "Sven mouse\n";
-                sum += comp1.getpMouse();
+            case "Окно10 Домашняя":
+                s += "Окно10 Домашняя\n";
+                sum += comp1.getpOc();
                 break;
             case "none":
-                s += "none mouse\n";
+                s += "none oc\n";
                 break;
         }
-        switch (comp1.getHeadphones()) {
-            case "Hyper ekes bookes ekes":
-                s += "Hyper ekes bookes ekes headphones\n";
-                sum += comp1.getpHeadphones();
+        switch (comp1.getAnti()) {
+            case "касперский":
+                s += "касперский\n";
+                sum += comp1.getpAnti();
                 break;
-            case "Senhesiser":
-                s += "Senhesiser headphones\n";
-                sum += comp1.getpHeadphones();
+            case "авасд":
+                s += "авасд\n";
+                sum += comp1.getpAnti();
                 break;
-            case "Phileps":
-                s += "Phileps headphones\n";
-                sum += comp1.getpHeadphones();
+            case "доктор веб":
+                s += "доктор веб\n";
+                sum += comp1.getpAnti();
                 break;
-            case "Marshall":
-                s += "Marshall headphones\n";
-                sum += comp1.getpHeadphones();
+            case "без защиты":
+                s += "без защиты\n";
+                sum += comp1.getpAnti();
                 break;
             case "none":
-                s += "none headphones\n";
+                s += "none anti \n";
                 break;
         }
 
-        switch (comp1.getPubg()) {
-            case "Fortinayte":
-                s += "and fotinaite\n";
-                sum += comp1.getpPubg();
+        switch (comp1.getClear()) {
+            case "да давайте":
+                s += "and  да давайте уберу\n";
+                sum += comp1.getpClear();
                 break;
-            case "pubdje":
-                s += "and pubg \n";
-                sum += comp1.getpPubg();
+            case "нэ не надо":
+                s += "and нэ не надо меня трогать \n";
+                sum += comp1.getpClear();
                 break;
             case "none":
-                s += "none jupapi munyany\n";
+                s += "none clear\n";
                 break;
         }
 
         if (comp1.getMultiply() == 5) {
-            s += "its for free my friends \n";
+            s += " da troyani \n";
             sum *= comp1.getMultiply();
         }
 
         SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS lots2 (lots TEXT, name TEXT, lotPrice INTEGER );");
-        db.execSQL("INSERT OR IGNORE INTO lots2 VALUES ('" + s + "','" + comp1.getName() + "','"+ sum +"') ");
+        db.execSQL("CREATE TABLE IF NOT EXISTS lots3 (lots TEXT, name TEXT, lotPrice INTEGER );");
+        db.execSQL("INSERT OR IGNORE INTO lots3 VALUES ('" + s + "','" + comp1.getName() + "','"+ sum +"') ");
 
 
         TextView t = findViewById(R.id.res1);

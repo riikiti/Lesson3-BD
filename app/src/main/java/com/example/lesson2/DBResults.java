@@ -15,8 +15,8 @@ public class DBResults extends AppCompatActivity {
         setContentView(R.layout.activity_dbresults);
 
         SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS lots2 (lots TEXT, name TEXT, lotPrice INTEGER );");
-        Cursor query = db.rawQuery("SELECT * FROM lots2;", null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS lots3 (lots TEXT, name TEXT, lotPrice INTEGER );");
+        Cursor query = db.rawQuery("SELECT * FROM lots3;", null);
         TextView textView = findViewById(R.id.textView6);
         textView.setText("");
         while(query.moveToNext()){
